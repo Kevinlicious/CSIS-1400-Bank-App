@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class BankingApp {
+   public static void main(String arg[]) {
+      Scanner scnr = new Scanner(System.in);
+      int i;
+      int numAccounts;
+      
+      System.out.println("Welcome!");
+      System.out.println("How many accounts would you like to open up?");
+      numAccounts = scnr.nextInt();
+      
+      AccountDetails account[] = new AccountDetails[numAccounts];
+      
+      for (i = 0; i < numAccounts; i++) {
+         account[i] = new AccountDetails();
+         account[i].openAccount();
+      }
+   }
+}
+      
+class AccountDetails {
+   Scanner scnr = new Scanner(System.in);
+   private String userName;
+   private String userAddress;
+   private String userPhone;
+   private int userID;
+   private String userPass; 
+
+   public void openAccount() {
+      System.out.print("Enter first and last name: ");
+      userName = scnr.next();
+      System.out.print("Enter current address: ");
+      userAddress = scnr.next();
+      System.out.print("Enter current phone number: ");
+      userPhone = scnr.next();
+      System.out.print("Enter blank digit ID: ");
+      userID = scnr.nextInt();
+      System.out.print("Enter password for new account: ");
+      userPass = scnr.next();
+   }
+}
+      
