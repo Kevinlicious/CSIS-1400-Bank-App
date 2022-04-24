@@ -74,6 +74,26 @@ public class BankingApp {
                     break;
 
                 case 'b':
+                    
+                // apply for loan
+                case 'f':
+                    while(!quit){
+                        System.out.println("\nWhat type of loan would you like to apply for?\n");
+                        Loans loanType = new Loans();
+                        loanType.viewLoans();
+                        char loanChoice = Character.toLowerCase(scnr.next().charAt(0));
+                        
+                        switch(loanChoice){
+                              case 'a':
+                              case 'b':
+                              case 'd':
+                              case 'e':
+                              case 'f':
+                                  quit = true;
+                              default:
+                                  System.out.println("Try again");
+                         }
+                     }
 
                 // default for invalid options
                 default:
