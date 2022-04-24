@@ -74,6 +74,37 @@ public class BankingApp {
                     break;
 
                 case 'b':
+                case 'g':
+                    
+                    while(!quit){
+                        System.out.println("What would you like to know?\n");
+                        Questions questions = new Questions();
+                        questions.viewQuestions();
+                        char questionChoice = Character.toLowerCase(scnr.next().charAt(0));
+                        
+                        switch(questionChoice){
+                              case 'a':
+                                  questions.viewAnswerA();
+                                  break;
+                              case 'b':
+                                  questions.viewAnswerB();
+                                  break;
+                              case 'c':
+                                  questions.viewAnswerC();
+                                  break;
+                              case 'd':
+                                  questions.viewAnswerD();
+                                  break;
+                              case 'e':
+                                  questions.viewAnswerE();
+                                  break;
+                              case 'f':
+                                  quit = true;
+                                  
+                              default:
+                                  System.out.println("Try Again");
+                        }
+                    }
 
                 // default for invalid options
                 default:
